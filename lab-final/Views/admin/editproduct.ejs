@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Edit Product</title>
+    <link rel="stylesheet" href="/adminStyle.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <a href="/admin/dashboard">Dashboard</a> |
+            <a href="/admin/products">Products</a> |
+            <a href="/admin/products/add">Add Product</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Edit Product</h2>
+        <form action="/admin/products/edit/<%= product._id %>" method="POST">
+            <label>Name:</label><br>
+            <input type="text" name="name" value="<%= product.name %>" required><br><br>
+
+            <label>Price:</label><br>
+            <input type="number" name="price" value="<%= product.price %>" required><br><br>
+
+            <label>Category:</label><br>
+            <input type="text" name="category" value="<%= product.category %>" required><br><br>
+
+            <label>Description:</label><br>
+            <textarea name="description"><%= product.description %></textarea><br><br>
+
+            <label>Image URL:</label><br>
+            <input type="text" name="image" value="<%= product.image %>"><br><br>
+
+            <button type="submit">Update Product</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Order Confirmed!</h1>
+
+<p>Thank you, <strong><%= order.customerName %></strong>!</p>
+<p>Your order ID is: <strong><%= order._id %></strong></p>
+<p>Total Amount: $<%= order.totalAmount %></p>
+
+<h3>Ordered Items:</h3>
+<ul>
+  <% order.items.forEach(item => { %>
+    <li><%= item.name %> - $<%= item.price %> x <%= item.quantity %></li>
+  <% }) %>
+</ul>
+
+<a href="/products"><button>Back to Products</button></a>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Admin Orders</h1>
+
+  <% if (orders && orders.length > 0) { %>
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer Name</th>
+          <th>Total Amount</th>
+          <th>Status</th>
+          <th>Order Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% orders.forEach(order => { %>
+          <tr>
+            <td><%= order._id %></td>
+            <td><%= order.customerName %></td>
+            <td>$<%= order.totalAmount %></td>
+            <td><%= order.status %></td>
+            <td><%= order.createdAt.toLocaleString() %></td>
+            <td>
+              <% if(order.status === 'Pending') { %>
+                <form action="/admin/orders/confirm/<%= order._id %>?email=admin@shop.com" method="POST" style="display:inline">
+                  <button type="submit">Confirm</button>
+                </form>
+                <form action="/admin/orders/cancel/<%= order._id %>?email=admin@shop.com" method="POST" style="display:inline">
+                  <button type="submit">Cancel</button>
+                </form>
+              <% } else { %>
+                <span>No actions</span>
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No orders found.</p>
+  <% } %>
+
+  <a href="/admin/dashboard?email=admin@shop.com"><button>Back to Dashboard</button></a>
+</body>
+</html>

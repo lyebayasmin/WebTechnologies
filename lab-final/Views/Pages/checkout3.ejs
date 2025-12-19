@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout3</title>
+  <!-- for bootstrap  -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome 6 (latest, for all icons like Apple, Facebook, etc.) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- jQuery (must come before any script that uses $) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Bootstrap JS bundle (optional but put after jQuery) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your vanilla DOM handlers (script.js) -->
+
+
+<!-- Your jQuery validation (validation.js) -->
+<script src="validation.js"></script>
+<script src="/EjsNavigation.js"></script>
+</head>
+<body>
+    <div class="d-flex ">
+        <div class="col-8 d-flex flex-column p-4">
+
+    <div class="d-flex justify-content-between">
+      <p class="fw-bold fs-4">Create Account </p>
+       <div id="originalPara" class="d-flex align-items-center">
+        <span class="me-2">Already have an account?</span>
+        <button id="signInBtn" type="button" class="btn btn-secondary" >Sign in</button>
+      </div>
+      
+
+      <!-- modified after clicking sign in button -->
+
+      <div id="modifiedPara" class="d-flex align-items-start d-none">
+        <span class="me-2">New here?</span>
+        <button id="createAccountBtn" type="button" class="btn btn-secondary">Create Account</button>
+      </div>
+    </div>
+   <!-- modified after clicking continue with email button -->
+     <div id="emailmodified" class="d-flex flex-column d-none">
+      <div id="sign" class=" border border-dark rounded-circle" style="width: 50px; height: 50px; padding: 17px; padding-top: 9px;">
+        <P class="fw-bold">&lt;</P>
+      </div>
+      <div class="d-flex">
+         <div class="col-4">
+        <label for="fname" class="form-label fw-bold">First Name</label>
+        <input type="text" class="form-control" id="fname">
+        <p class="text text-danger d-none warningtext">First name is required</p>
+      </div>
+
+       <div class="col-4 offset-2">
+        <label for="lname" class="form-label fw-bold">Last Name</label>
+        <input type="text" class="form-control" id="lname">
+         <p class="text text-danger d-none warningtext">Last name is required</p>
+      </div>
+      </div>
+       <label for="mail" class="form-label fw-bold">Email</label>
+        <input type="text" class="form-control" id="mail">
+          <p class="text text-danger d-none warningtext">Email is required</p>
+
+         <label for="password" class="form-label fw-bold">Password</label>
+        <input type="password" class="form-control" id="password">
+          <p class="text text-danger d-none warningtext ">password is required</p>
+    </div>
+
+    <div id="originallogobuttons">
+       <button type="button" class="btn btn-light w-100 fw-bold text-muted mb-4">
+         <i class="fa-brands fa-google me-1 text-primary fs-2"></i>Continue with Google</button>
+      
+         
+    <button type="button" class="btn btn-light w-100 fw-bold text-muted mb-4 d-flex align-items-center justify-content-center">
+      <i class="fa-brands fa-apple fs-1 me-2 text-black"></i>
+      Continue with Apple</button>
+
+      
+     
+    <button type="button" class="btn btn-light w-100 fw-bold text-muted mb-4 d-flex align-items-center justify-content-center">
+      <i class="fa-brands fa-facebook me-1 text-primary fs-2"></i>
+      Continue with Facebook
+    </button>
+    </div>
+
+    <div id="original">
+      <button type="button" class="btn btn-light w-100 fw-bold text-muted mb-4">
+         <i class="fa-solid fa-envelope me-1 text-primary fs-2 "></i>Continue with Email</button>
+
+    
+    <div class="form-check mb-2">
+      <input class="form-check-input" type="checkbox" value="" id="updatesCheckbox" checked>
+      <label class="form-check-label fw-normal" for="updatesCheckbox">
+        Send me tips, trends, updates & offers.
+      </label>
+    </div>
+
+    <p class="text-muted">You can unsubscribe at any time.</p>
+    <hr>
+      
+    </div>
+
+     <!-- modified after clicking sign in button -->
+
+
+     <div id="modified" class="d-flex flex-column d-none">
+      <div class="d-flex justify-content-between">
+        <p>Username or Email</p>
+       <a href="#" id="button" >Remind me</a>
+      </div>
+       <input type="text">
+       <div class="warningmsg d-none">
+        <p class="text text-danger">Username or Email is required
+</p>
+       </div>
+        <div class="d-flex justify-content-between">
+        <p>Password</p>
+       <a href="#" id="buttonforgot" >Forgot</a>
+      </div>
+       <input type="password">
+        <div class="warningmsg d-none ">
+        <p class="text text-danger">Password is required
+</p>
+</div>
+    </div>
+    
+    <p class="text-muted">
+      By continuing, you confirm you are 18 or over and agree to our  
+      <span class="text-decoration-underline cursor-pointer">Privacy Policy</span> 
+      and <span class="text-decoration-underline cursor-pointer">Terms of Use.</span>
+    </p>
+
+    <div class="d-flex alert alert-secondary opacity-50 rounded-0 py-5 justify-content-end">
+      <button type="button" class="btn btn-success cursor-pointer">Create account and Continue</button>
+    </div>
+
+    <div class="d-flex justify-content-start">
+      <button  id="billingBtn" type="button" class="btn btn-light fs-4 text-muted fw-bold">Billing Details</button>
+    </div>
+    <div class="d-flex justify-content-start ">
+      <button type="button" class="btn btn-light fs-4 text-muted fw-bold ">Select payment method</button>
+    </div>
+  </div>
+
+  <!-- <div class="d-flex flex-column" style="width: 20%;">
+    <h2 class="fs-4 text text-secondary fw-bold">Order Summary</h2>
+    <hr>
+    <div class="d-flex justify-content-between">
+         <p class="text text-secondary">Betheme | Responsive Multipurpose WordPress</p>
+         <p>$60.00</p>
+
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+         <p class="text text-secondary">Handling Fee</p>
+         <p>$0.00</p>
+        
+
+    </div>
+     <hr>
+
+     <div class="d-flex justify-content-between">
+         <p class="text text-secondary">Total</p>
+         <p>US $60.00</p>
+         <p></p>
+         <hr>
+       
+
+    </div>
+      <p class="text-center">Secure Checkout</p>
+   
+
+  </div>
+   -->
+    </div>
+
+   
+
+    
+  
+
+</body>
+</html>

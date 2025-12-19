@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Product List</title>
+    <link rel="stylesheet" href="/adminStyle.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <a href="/admin/dashboard">Dashboard</a> |
+            <a href="/admin/products">Products</a> |
+            <a href="/admin/products/add">Add Product</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Product List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price ($)</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(product => { %>
+                <tr>
+                    <td><%= product.name %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.category %></td>
+                    <td><%= product.description %></td>
+                    <td>
+                        <a href="/admin/products/edit/<%= product._id %>">Edit</a> |
+                        <form action="/admin/products/delete/<%= product._id %>" method="POST" style="display:inline;">
+                            <button type="submit" onclick="return confirm('Delete this product?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/admin/products/add">Add New Product</a>
+    </main>
+</body>
+</html>

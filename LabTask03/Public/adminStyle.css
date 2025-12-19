@@ -1,0 +1,130 @@
+/* ===== General Reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #6c63ff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+header nav a:hover {
+    color: #ffda6b;
+}
+
+/* ===== Main Container ===== */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table th {
+    background-color: #6c63ff;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+table tr:hover {
+    background-color: #e0e0ff;
+}
+
+/* ===== Buttons ===== */
+button, .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button.add-btn {
+    background-color: #6c63ff;
+    color: white;
+    margin-bottom: 15px;
+}
+
+button.add-btn:hover {
+    background-color: #574fd6;
+}
+
+button.edit-btn {
+    background-color: #4caf50;
+    color: white;
+}
+
+button.edit-btn:hover {
+    background-color: #449d48;
+}
+
+button.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+button.delete-btn:hover {
+    background-color: #d73830;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    table th, table td {
+        padding: 8px 10px;
+    }
+
+    header nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+}

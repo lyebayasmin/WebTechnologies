@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Your Cart</h1>
+
+<% if (!cart || cart.length === 0) { %>
+  <p>Your cart is empty.</p>
+  <a href="/products"><button>Back to Products</button></a>
+<% } else { %>
+  <table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cart.forEach(item => { %>
+        <tr>
+          <td><%= item.name %></td>
+          <td>$<%= item.price %></td>
+          <td><%= item.quantity %></td>
+          <td>$<%= item.price * item.quantity %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <h3>Total: $<%= totalAmount %></h3>
+
+  <a href="/checkout"><button>Proceed to Checkout</button></a>
+  <a href="/products"><button>Continue Shopping</button></a>
+<% } %>
+
+</body>
+</html>
